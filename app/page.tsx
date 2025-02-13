@@ -1,5 +1,6 @@
 import Hero from "./Home/page"
 import Features from "./Features/page";
+import Plans from "./Plans/page"
 
 export default function Home() {
   return (
@@ -8,6 +9,8 @@ export default function Home() {
 
 <Hero/>
     <Features/>
+
+   
     </main>
    
   );

@@ -236,25 +236,27 @@ const Features = () => {
 
             {/* Call to Action */}
             <MotionSection
-                className="py-16 px-4"
+                className="py-16 px-4 m-14 ml-24 mr-24"
                 style={{ backgroundColor: 'rgba(16, 69, 144, 0.1)' }}
                 initial={{ opacity: 0 }}
                 whileInView={{ opacity: 1 }}
                 viewport={{ once: true }}
             >
-                <div className="max-w-4xl mx-auto text-center">
-                    <h2 className="text-3xl font-bold mb-6" style={{ color: '#1A365D' }}>
-                        Ready to Transform Your Professional Future?
-                    </h2>
-                    <p className="text-lg mb-8" style={{ color: 'rgb(98, 116, 134)' }}>
-                        Join Foriqra today and take the first step towards accelerating your career growth.
-                    </p>
+             <div className=" text-center">
+                <h2 className="text-3xl font-bold mb-6" style={{ color: '#1A365D' }}>
+                    Ready to Transform Your Professional Future?
+                </h2>
+                <p className="text-lg mb-8" style={{ color: 'rgb(98, 116, 134)' }}>
+                    Join Foriqra today and take the first step towards accelerating your career growth.
+                </p>
+                <div className="flex justify-center">
                     <button
-                     className={`bg-[#D4AF37] hover:bg-[#B69330] justify-center left-3/4 text-white px-6 md:px-8 py-3 md:py-4 rounded-lg transition-all duration-300 hover:scale-105 hover:shadow-lg focus:outline-none focus:ring-2 focus:ring-[#D4AF37] focus:ring-opacity-50 flex items-center gap-2`}
+                    className={`bg-[#D4AF37] hover:bg-[#B69330] text-white px-6 md:px-8 py-3 md:py-4 rounded-lg transition-all duration-300 hover:scale-105 hover:shadow-lg focus:outline-none focus:ring-2 focus:ring-[#D4AF37] focus:ring-opacity-50`}
                     >
-                        Get Started For Free
+                    Get Started For Free
                     </button>
-                </div>
+            </div>
+            </div>
             </MotionSection>
         </div>
     );

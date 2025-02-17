@@ -1,16 +1,20 @@
 import Hero from "./Home/page"
 import Features from "./Features/page";
-import Plans from "./Plans/page"
+import Footer from "./components/Footer";
+import ServicesPage from "./components/Plan_sub";
+import ContactPages from "./Contact_sub/page";
+
 
 export default function Home() {
   return (
     <main>
 
 
-<Hero/>
-    <Features/>
-
-   
+  <Hero/>
+  <Features/>
+   <ServicesPage/>
+   <ContactPages/>
+   <Footer/>
     </main>
    
   );

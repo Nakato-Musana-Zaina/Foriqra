@@ -1,8 +1,21 @@
-import React, { useState } from 'react';
-import { MapPin, Phone, Mail, MessageCircle, ChevronDown, ChevronUp } from 'lucide-react';
-import { li } from 'framer-motion/client';
 
-const FAQItem = ({ question, answer }) => {
+'use client';
+
+import React, { useState } from 'react';
+import Image from 'next/image';
+import { MapPin, Phone, Mail, MessageCircle, ChevronDown, ChevronUp } from 'lucide-react';
+
+interface FAQ {
+  question: string;
+  answer: string;
+}
+
+interface FAQItemProps {
+  question: string;
+  answer: string;
+}
+
+const FAQItem: React.FC<FAQItemProps> = ({ question, answer }) => {
   const [isOpen, setIsOpen] = useState(false);
 
   return (
@@ -23,8 +36,8 @@ const FAQItem = ({ question, answer }) => {
   );
 };
 
-const ContactPage = () => {
-  const faqs = [
+const ContactPage: React.FC = () => {
+  const faqs: FAQ[] = [
     {
       question: "Lorem ipsum dolor sit amet?",
       answer: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut elit tellus, luctus nec ullamcorper mattis."
@@ -43,33 +56,33 @@ const ContactPage = () => {
     }
   ];
 
-  const handleSubmit = (e) => {
+  const handleSubmit = (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
+    // Add form submission logic here
   };
 
   return (
     <div className="min-h-screen bg-white">
       {/* Background accent */}
-      <div className="absolute top-0 right-0 w-1/3 h-screen bg-[#D4AF37]/10 -z-10" />
-
-      {/* Header */}
-      <header className="w-full py-6 px-4 bg-[#1A365D]">
-        <nav className="max-w-6xl mx-auto flex justify-between items-center">
-          <div className="text-2xl font-bold text-[#D4AF37]">Your Logo</div>
-          <div className="space-x-6 text-white">
-            <a href="/" className="hover:text-[#008080] transition-colors">Home</a>
-            <a href="/about" className="hover:text-[#008080] transition-colors">About</a>
-            <a href="/contact" className="hover:text-[#008080] transition-colors">Contact</a>
-          </div>
-        </nav>
-      </header>
+      <div className="relative h-[33vh] w-full overflow-hidden">
+          <Image
+            src="/images/service-background.jpg" // Replace with your image path
+            alt="Service Background"
+            layout="fill"
+            objectFit="cover"
+            className="absolute top-0 left-0 w-full h-full"
+          />
+          <div className="absolute inset-0 bg-black opacity-30"></div> {/* Optional: Darken image */}
+        </div>
 
       {/* Main Content */}
-      <main className="max-w-6xl mx-auto px-4 py-16">
+      <main className="max-w-7xl mx-auto px-4 py-16 relative z-10">
         <div className="text-center mb-16">
-          <h1 className="text-4xl font-bold mb-4">Contact Us</h1>
+          <h1 className="text-5xl font-semibold mb-5 text-[#1A365D] mt-4 font-bold mb-4">Contact Us</h1>
           <p className="text-gray-600 max-w-2xl mx-auto">Get in touch with our team for any questions or inquiries. We're here to help and will respond as soon as possible.</p>
         </div>
+
+        
 
         <div className="grid grid-cols-1 md:grid-cols-2 gap-16 mb-24">
           {/* Contact Form */}
@@ -160,16 +173,19 @@ const ContactPage = () => {
                 </div>
               </div>
             </div>
-
-            {/* Map */}
-            <div className="w-full h-64 bg-gray-100 rounded-lg overflow-hidden shadow-lg">
-              <img 
-                src="/api/placeholder/800/400" 
-                alt="Map location" 
-                className="w-full h-full object-cover"
-              />
-            </div>
           </div>
+        </div>
+
+
+         {/* Map Section */}
+         <div className="max-w-3xl mx-auto mb-24">
+              <div className="w-full h-64 bg-gray-100 rounded-lg overflow-hidden shadow-lg">
+                <img
+                  src="/api/placeholder/800/400"
+                  alt="Map location"
+                  className="w-full h-full object-cover"
+                />
+              </div>
         </div>
 
         {/* FAQ Section */}
@@ -194,43 +210,6 @@ const ContactPage = () => {
           </button>
         </div>
       </main>
-
-      {/* Footer */}
-      <footer className="bg-[#1A365D] text-white py-12">
-        <div className="max-w-6xl mx-auto px-4">
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-12">
-            <div>
-              <h3 className="text-xl font-bold text-[#D4AF37] mb-4">Your Logo</h3>
-              <p className="text-gray-300">Providing exceptional service and solutions since 2010.</p>
-            </div>
-            <div>
-              <h3 className="text-xl font-bold mb-4">Quick Links</h3>
-              <ul className="space-y-2">
-                <li><a href="/" className="text-gray-300 hover:text-[#008080] transition-colors">Home</a></li>
-                <li><a href="/about" className="text-gray-300 hover:text-[#008080] transition-colors">About</a></li>
-                <li><a href="/contact" className="text-gray-300 hover:text-[#008080] transition-colors">Contact</a></li>
-              </ul>
-            </div>
-            <div>
-              <h3 className="text-xl font-bold mb-4">Contact Info</h3>
-              <ul className="space-y-2 text-gray-300">
-                <li className="flex items-center space-x-2">
-                  <MapPin className="w-4 h-4" />
-                  <span>123 Business Avenue, San Francisco</span>
-                </li>
-                <li className="flex items-center space-x-2">
-                  <Phone className="w-4 h-4" />
-                  <span>+1 (555) 123-4567</span>
-                </li>
-                <li className="flex items-center space-x-2">
-                  <Mail className="w-4 h-4" />
-                  <span>contact@example.com</span>
-                </li>
-              </ul>
-            </div>
-          </div>
-        </div>
-      </footer>
     </div>
   );
 };

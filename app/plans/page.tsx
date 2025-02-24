@@ -5,6 +5,8 @@ import Image from 'next/image';
 import { AiOutlineArrowRight, AiOutlineArrowDown, AiOutlineArrowUp } from 'react-icons/ai';
 import { FaCheck } from 'react-icons/fa';
 import { useState } from 'react'; // Import useState
+import Footer from '../components/Footer';
+import Navbar from '../components/navbar';
 
 export default function ServicesPage() {
   const [showBasicDetails, setShowBasicDetails] = useState(false);
@@ -74,6 +76,7 @@ export default function ServicesPage() {
 
   return (
     <>
+    <Navbar/>
       <Head>
         <title>Foriqra - Our Services</title>
         <meta name="description" content="Foriqra's service offerings" />
@@ -84,7 +87,7 @@ export default function ServicesPage() {
         {/* Background Image */}
         <div className="relative h-[33vh] w-full overflow-hidden">
           <Image
-            src="/images/service-background.jpg" // Replace with your image path
+            src="/image/green.png" // Replace with your image path
             alt="Service Background"
             layout="fill"
             objectFit="cover"
@@ -308,6 +311,7 @@ export default function ServicesPage() {
             <p className="text-gray-600">For users on the Basic and Professional packages, they only need to pay again if they require significant changes made to their profiles, such as adding new sections or substantially redesigning the portfolio.</p>
           </div>
         </main>
+        <Footer/>
       </div>
     </>
   );

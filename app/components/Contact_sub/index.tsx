@@ -178,7 +178,7 @@ const ContactPages = () => {
         </div>
         
         <div className="mt-8 text-center">
-          <Link href="/contact" passHref>
+          <Link href="/contact_us" passHref>
             <button className="inline-flex items-center px-6 py-3 bg-[#168763] text-white rounded-md hover:bg-[#00a36c] transition-colors duration-200 focus:outline-none focus:ring-2 focus:ring-[#00a36c] focus:ring-offset-2">
               More Contact Info
             </button>

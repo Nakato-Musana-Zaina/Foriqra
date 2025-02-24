@@ -4,6 +4,9 @@
 import React, { useState } from 'react';
 import Image from 'next/image';
 import { MapPin, Phone, Mail, MessageCircle, ChevronDown, ChevronUp } from 'lucide-react';
+import Footer from '../components/Footer';
+import Link from 'next/link';
+import Navbar from '../components/navbar';
 
 interface FAQ {
   question: string;
@@ -63,10 +66,11 @@ const ContactPage: React.FC = () => {
 
   return (
     <div className="min-h-screen bg-white">
+      <Navbar/>
       {/* Background accent */}
       <div className="relative h-[33vh] w-full overflow-hidden">
           <Image
-            src="/images/service-background.jpg" // Replace with your image path
+            src="/image/green.png" // Replace with your image path
             alt="Service Background"
             layout="fill"
             objectFit="cover"
@@ -205,11 +209,15 @@ const ContactPage: React.FC = () => {
           <p className="text-lg text-gray-300 mb-8 max-w-2xl mx-auto">
             Join thousands of satisfied customers who trust us with their business needs.
           </p>
+          <Link href="/plans">
           <button className="px-8 py-3 bg-[#008080] hover:bg-[#006666] rounded-lg transition-colors">
-            Get Started Now
+            More Inforamtion
           </button>
+          </Link>
+          
         </div>
       </main>
+      <Footer/>
     </div>
   );
 };

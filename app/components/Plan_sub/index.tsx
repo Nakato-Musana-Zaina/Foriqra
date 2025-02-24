@@ -179,7 +179,7 @@ interface PlanImage {
 
           {/* View All Plans Button */}
           <div className="text-center">
-            <Link href="/services"  // Assuming the full services page is at /services
+            <Link href="/plans"  // Assuming the full services page is at /services
               className="bg-[#168763] hover:bg-[#00a36c] text-white px-6 md:px-8 py-3 md:py-4 rounded-lg inline-flex items-center gap-2 transition-all duration-300 hover:scale-105 hover:shadow-lg focus:outline-none focus:ring-2 focus:ring-[#20c997] focus:ring-opacity-50"
             >
               View All Plans <AiOutlineArrowRight size={20} className="animate-slide-x" />

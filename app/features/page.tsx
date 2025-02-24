@@ -14,6 +14,7 @@ import {
 } from 'lucide-react';
 
 import type { SVGProps } from 'react';
+import Link from 'next/link';
 
 interface FeatureCardProps {
     icon: React.ComponentType<SVGProps<SVGSVGElement>>;
@@ -242,6 +243,7 @@ const Features = () => {
                 whileInView={{ opacity: 1 }}
                 viewport={{ once: true }}
             >
+            
              <div className=" text-center">
                 <h2 className="text-3xl font-bold mb-6" style={{ color: '#1A365D' }}>
                     Ready to Transform Your Professional Future?
@@ -249,6 +251,7 @@ const Features = () => {
                 <p className="text-lg mb-8" style={{ color: 'rgb(98, 116, 134)' }}>
                     Join Foriqra today and take the first step towards accelerating your career growth.
                 </p>
+                <Link href="/contact_us">
                 <div className="flex justify-center">
                     <button
                     className={`bg-[#D4AF37] hover:bg-[#B69330] text-white px-6 md:px-8 py-3 md:py-4 rounded-lg transition-all duration-300 hover:scale-105 hover:shadow-lg focus:outline-none focus:ring-2 focus:ring-[#D4AF37] focus:ring-opacity-50`}
@@ -256,6 +259,8 @@ const Features = () => {
                     Get Started For Free
                     </button>
             </div>
+            </Link>
+          
             </div>
             </MotionSection>
         </div>

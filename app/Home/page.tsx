@@ -12,15 +12,16 @@ import {
   ExternalLink,
   CheckCircle
 } from 'lucide-react';
+import Link from 'next/link';
 
 const Hero = () => {
   const [currentImageIndex, setCurrentImageIndex] = useState(0);
   const [isImageLoading, setIsImageLoading] = useState(true);
   
   const images = [
-    '/api/placeholder/600/600',
-    '/api/placeholder/600/600',
-    '/api/placeholder/600/600'
+    '/image/person1.jpeg',
+    '/image/person2.jpeg',
+    '/image/person3.jpeg'
   ];
 
   useEffect(() => {
@@ -100,7 +101,7 @@ const Hero = () => {
             Empowering professionals to showcase their talents through innovative digital portfolios. 
             Let us help you present your work in the best way possible.
           </p>
-
+          <Link href="/plans">
           <button 
             className=" left-1/4 mt-14 -translate-x-1/2 bg-[#D4AF37] hover:bg-[#B69330] 
                       text-white px-6 md:px-8 py-3 md:py-4 rounded-lg flex items-center gap-2 
@@ -112,6 +113,8 @@ const Hero = () => {
             <span className="font-medium">Get Started Now</span>
             <ArrowRight size={20} className="animate-slide-x" />
           </button>
+          </Link>
+          
         </div>
       </div>
 

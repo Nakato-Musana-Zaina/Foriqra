@@ -4,6 +4,9 @@
 import React, { useEffect } from 'react';
 import Image from 'next/image';
 import { Camera, Lightbulb, Lock, Paintbrush, Users } from 'lucide-react';
+import Footer from '../components/Footer';
+import Navbar from '../components/navbar';
+import Link from 'next/link';
 
 const AboutPage = () => {
   const teamMembers = [
@@ -76,10 +79,10 @@ const AboutPage = () => {
 
   return (
     <div className="min-h-screen bg-white">
-
+<Navbar/>
         <div className="relative h-[33vh] w-full overflow-hidden">
                 <Image
-                  src="/images/service-background.jpg" // Replace with your image path
+                  src="/image/gold.png" // Replace with your image path
                   alt="Service Background"
                   layout="fill"
                   objectFit="cover"
@@ -206,11 +209,15 @@ const AboutPage = () => {
           <p className="text-teal-100 mb-8 max-w-2xl mx-auto fade-in opacity-0 translate-y-10 transition-all duration-1000 delay-200">
             Join us in revolutionizing the way professionals showcase their talents and connect with opportunities.
           </p>
+          <Link href="/contact_us">
           <button className="bg-white text-teal-600 px-8 py-3 rounded-full hover:bg-teal-50 transition-colors duration-300 transform hover:scale-105 fade-in opacity-0 translate-y-10 transition-all duration-1000 delay-400">
             GET STARTED
           </button>
+          </Link>
+          
         </div>
       </div>
+      <Footer/>
     </div>
   );
 };
